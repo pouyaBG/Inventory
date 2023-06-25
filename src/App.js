@@ -5,7 +5,7 @@ import Products from "./components/Products";
 
 function App() {
   return (
-    <div className="bg-[#0e599f] w-screen h-screen flex flex-col justify-start items-center">
+    <div className="h-full flex flex-col justify-start items-center pb-10">
       <NavBar />
       <Products />
       <Category />
