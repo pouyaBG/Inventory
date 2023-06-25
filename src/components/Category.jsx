@@ -50,7 +50,13 @@ const Category = () => {
               ></textarea>
             </div>
             <div className="flex flex-row items-center justify-between gap-x-4">
-              <button className="flex-1 border-2 border-slate-400 text-slate-300 rounded-xl py-1">
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  setIsShow(false);
+                }}
+                className="flex-1 border-2 border-slate-400 text-slate-300 rounded-xl py-1"
+              >
                 Cancel
               </button>
               <button
