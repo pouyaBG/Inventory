@@ -1,27 +1,26 @@
 import { useState } from "react";
-
+import "animate.css";
 const Category = () => {
   const [isShow, setIsShow] = useState(false);
   const CategoryModal = () => {
-    if (isShow) {
-      setIsShow(false);
-    } else {
-      setIsShow(true);
-    }
+    setIsShow(!isShow);
   };
   return (
     <>
       <div>
-        <button onClick={CategoryModal}>
+        <button
+          onClick={CategoryModal}
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-5"
+        >
           {isShow ? "Close" : "Add new Categort"}
         </button>
       </div>
       {isShow ? (
         <div className="w-[56%] mt-5 ">
-          <h2 className="text-xl text-black font-bold mb-2">
+          <h2 className="text-xl text-black font-bold mb-2 animate__animated animate__fadeInUp">
             Add New Category
           </h2>
-          <form className="bg-slate-700 p-4 rounded-lg flex flex-col gap-y-4">
+          <form className="bg-slate-700 p-4 rounded-lg flex flex-col gap-y-4 animate__animated animate__fadeInUp">
             <div>
               <label
                 htmlFor="category-title"
