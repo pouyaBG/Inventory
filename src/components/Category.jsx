@@ -5,6 +5,8 @@ const Category = () => {
     title: "",
     discription: "",
   });
+  // all
+  const [categorys, setCategorys] = useState([]);
   const [isShow, setIsShow] = useState(false);
   const CategoryModal = () => {
     setIsShow(!isShow);
@@ -13,6 +15,18 @@ const Category = () => {
     setCategory({
       ...category,
       [e.target.name]: e.target.value,
+    });
+  };
+
+  const addNewCategoryHandler = (e) => {
+    e.preventDefault();
+    setCategorys([
+      ...categorys,
+      { ...category, createAt: new Date().toISOString() },
+    ]);
+    setCategory({
+      title: "",
+      discription: "",
     });
   };
   return (
@@ -74,6 +88,7 @@ const Category = () => {
                 Cancel
               </button>
               <button
+                onClick={addNewCategoryHandler}
                 id="add-new-category"
                 className="flex-1 bg-slate-500 text-slate-200 rounded-xl py-1"
               >
