@@ -10,8 +10,8 @@ function App() {
   return (
     <div className="h-full flex flex-col justify-start items-center pb-10">
       <NavBar />
-      <Products categorys={categorys} />
       <Category categorys={categorys} setCategorys={setCategorys}/>
+      <Products categorys={categorys} />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "animate.css";
-const Category = ({ categorys ,setCategorys }) => {
+const Category = ({ categorys, setCategorys }) => {
   const [category, setCategory] = useState({
     title: "",
     discription: "",
@@ -21,7 +21,11 @@ const Category = ({ categorys ,setCategorys }) => {
     e.preventDefault();
     setCategorys([
       ...categorys,
-      { ...category, createAt: new Date().toISOString() },
+      {
+        ...category,
+        createAt: new Date().toISOString(),
+        id: new Date().getTime(),
+      },
     ]);
     setCategory({
       title: "",
@@ -30,7 +34,7 @@ const Category = ({ categorys ,setCategorys }) => {
   };
   return (
     <>
-      <div>
+      <div className="mt-12">
         <button
           onClick={CategoryModal}
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-5"
@@ -40,10 +44,10 @@ const Category = ({ categorys ,setCategorys }) => {
       </div>
       {isShow ? (
         <div className="w-[56%] mt-5 ">
-          <h2 className="text-xl text-black font-bold mb-2 animate__animated animate__fadeInUp">
+          <h2 className="text-xl text-black font-bold mb-2 animate__animated animate__bounceIn">
             Add New Category
           </h2>
-          <form className="bg-slate-700 p-4 rounded-lg flex flex-col gap-y-4 animate__animated animate__fadeInUp">
+          <form className="bg-slate-700 p-4 rounded-lg flex flex-col gap-y-4 animate__animated animate__bounceIn">
             <div>
               <label
                 htmlFor="category-title"
