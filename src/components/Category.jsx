@@ -1,9 +1,19 @@
 import { useState } from "react";
 import "animate.css";
 const Category = () => {
+  const [category, setCategory] = useState({
+    title: "",
+    discription: "",
+  });
   const [isShow, setIsShow] = useState(false);
   const CategoryModal = () => {
     setIsShow(!isShow);
+  };
+  const handleChange = (e) => {
+    setCategory({
+      ...category,
+      [e.target.name]: e.target.value,
+    });
   };
   return (
     <>
@@ -29,8 +39,10 @@ const Category = () => {
                 Title
               </label>
               <input
+                name="title"
+                value={category.title}
+                onChange={handleChange}
                 type="text"
-                name="category-title"
                 id="category-title"
                 className="bg-transparent rounded-xl border-2 border-slate-500 text-slate-400"
               ></input>
@@ -43,8 +55,10 @@ const Category = () => {
                 Descreption
               </label>
               <textarea
+                name="discription"
+                value={category.discription}
+                onChange={handleChange}
                 type="text"
-                name="category-descreption"
                 id="category-description"
                 className="bg-transparent rounded-xl border-2 border-slate-500 text-slate-400 w-full"
               ></textarea>
