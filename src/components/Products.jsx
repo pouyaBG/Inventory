@@ -3,9 +3,16 @@ import { useState } from "react";
 const Products = ({ categorys }) => {
   const [product, setProduct] = useState({
     title: "",
-    quantity: "",
+    quantity: 0,
     category: "",
   });
+
+  const handleChange = (e) => {
+    setProduct({
+      ...product,
+      [e.target.name]: e.target.value,
+    });
+  };
   return (
     <>
       <div className="w-[56%] transition-all">
@@ -20,7 +27,9 @@ const Products = ({ categorys }) => {
             </label>
             <input
               type="text"
-              name="product-title"
+              onChange={handleChange}
+              value={product.title}
+              name="title"
               id="product-title"
               className="bg-transparent rounded-xl border-2 border-slate-500 text-slate-400 "
             ></input>
@@ -34,7 +43,9 @@ const Products = ({ categorys }) => {
             </label>
             <input
               type="number"
-              name="product-quantity"
+              onChange={handleChange}
+              value={product.quantity}
+              name="quantity"
               id="product-quantity"
               className="bg-transparent rounded-xl border-2 border-slate-500 text-slate-400"
             ></input>
@@ -47,12 +58,14 @@ const Products = ({ categorys }) => {
               Category
             </label>
             <select
-              name="product-category"
+              name="category"
               id="product-category"
+              onChange={handleChange}
+              value={product.category}
               className="bg-transparent border-2 border-white text-slate-400 rounded-xl w-full"
             >
               {categorys.map((item, id) => (
-                <option key={id} className="bg-slate-500 text-slate-200">
+                <option key={id} value={item.id} className="bg-slate-500 text-slate-200">
                   {item.title}
                 </option>
               ))}
