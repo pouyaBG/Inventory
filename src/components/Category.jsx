@@ -1,12 +1,11 @@
 import { useState } from "react";
 import "animate.css";
-const Category = () => {
+const Category = ({ categorys ,setCategorys }) => {
   const [category, setCategory] = useState({
     title: "",
     discription: "",
   });
-  // all
-  const [categorys, setCategorys] = useState([]);
+
   const [isShow, setIsShow] = useState(false);
   const CategoryModal = () => {
     setIsShow(!isShow);
