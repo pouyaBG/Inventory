@@ -65,7 +65,11 @@ const Products = ({ categorys }) => {
               className="bg-transparent border-2 border-white text-slate-400 rounded-xl w-full"
             >
               {categorys.map((item, id) => (
-                <option key={id} value={item.id} className="bg-slate-500 text-slate-200">
+                <option
+                  key={id}
+                  value={item.id}
+                  className="bg-slate-500 text-slate-200"
+                >
                   {item.title}
                 </option>
               ))}
