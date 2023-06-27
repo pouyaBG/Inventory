@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Products = ({ categorys, setProducts, products }) => {
+const Products = ({ categorys, products, setProducts }) => {
   const [product, setProduct] = useState({
     title: "",
     quantity: 0,
@@ -13,14 +13,15 @@ const Products = ({ categorys, setProducts, products }) => {
       [e.target.name]: e.target.value,
     });
   };
-  const addNewProduct = (e) => {
+  const  addNewProduct = (e) => {
     e.preventDefault();
-    setProducts([...products, { ...product, createdAt: new Date().getTime() }]);
+    setProducts([...products, { ...product, createAt: new Date().getTime() }]);
     setProduct({
       title: "",
       quantity: 0,
       category: "",
     });
+    console.log(products);
   };
   return (
     <>
@@ -74,7 +75,7 @@ const Products = ({ categorys, setProducts, products }) => {
               className="bg-transparent border-2 border-white text-slate-400 rounded-xl w-full"
             >
               <option className="bg-slate-500 text-slate-200">
-                Select a Category
+                select a category
               </option>
               {categorys.map((item, id) => (
                 <option
