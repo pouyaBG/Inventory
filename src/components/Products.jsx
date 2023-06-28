@@ -13,9 +13,16 @@ const Products = ({ categorys, products, setProducts }) => {
       [e.target.name]: e.target.value,
     });
   };
-  const  addNewProduct = (e) => {
+  const addNewProduct = (e) => {
     e.preventDefault();
-    setProducts([...products, { ...product, createAt: new Date().getTime() }]);
+    setProducts([
+      ...products,
+      {
+        ...product,
+        createAt: new Date().toISOString(),
+        id: new Date().getTime(),
+      },
+    ]);
     setProduct({
       title: "",
       quantity: 0,

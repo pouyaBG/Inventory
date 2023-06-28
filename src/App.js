@@ -14,7 +14,7 @@ function App() {
       <NavBar />
       <Category categorys={categorys} setCategorys={setCategorys} />
       <Products categorys={categorys} products={products} setProducts={setProducts} />
-      <ListProducts  products={products}/>
+      <ListProducts  products={products} setProducts={setProducts}/>
     </div>
   );
 }
