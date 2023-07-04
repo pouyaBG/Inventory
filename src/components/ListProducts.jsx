@@ -3,6 +3,7 @@ const ListProducts = ({ products, setProducts }) => {
     const newProducts = products.filter((product) => product.id !== productId);
     setProducts(newProducts);
   };
+
   return (
     <>
       <h2 className="text-xl flex justify-start items-center text-black font-bold w-[56%] mt-2">
