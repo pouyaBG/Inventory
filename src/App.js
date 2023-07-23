@@ -11,9 +11,7 @@ function App() {
   const [categorys, setCategorys] = useState([]);
   const [products, setProducts] = useState([]);
   const [filterProducts, setFilterProducts] = useState([]);
-  useEffect(() => {
-    
-  }, [products]);
+  useEffect(() => {}, [products]);
   return (
     <div className="h-full flex flex-col justify-start items-center pb-10">
       <NavBar />

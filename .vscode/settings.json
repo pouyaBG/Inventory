@@ -1,0 +1,8 @@
+{
+  "debug.terminal.clearBeforeReusing": false,
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.cursorStyle": "line",
+  "editor.formatOnSave": true,
+  "diffEditor.experimental.useVersion2": false
+}
